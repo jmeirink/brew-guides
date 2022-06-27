@@ -1,7 +1,17 @@
 import { BrewGuide } from '../models/brewguide.js'
 
 function index(req, res) {
-  console.log("Brew Guides!")
+  BrewGuide.find({})
+  .then(brewguides => {
+    res.render('brewguides/index', {
+      brewguides,
+      title: 'Brewguide'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export {
