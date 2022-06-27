@@ -1,0 +1,14 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Brew Guides</h1>
+	<ul>
+    <!-- Or should it be brewGuides.foreach?? -->
+  <% brewguides.forEach(brewguide => { %>
+    <li><%= brewguide.name %></li>
+  <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
