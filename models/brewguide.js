@@ -8,13 +8,13 @@ const brewGuideSchema = new Schema({
     type: String,
     enum: ['V60', 'Chemex', 'Kalita', 'Aeropress']
   },
-  grindSize: {
+  grindsize: {
     type: String,
     enum: ['Course', 'Medium', 'Fine', 'Extra Fine']
   },
-  groundCoffee: Number, // add Grams to the number
-  waterTemp: Number, // add Farenheit to the number
-  brewTime: Number, // convert to a time value
+  groundcoffee: Number, // add Grams to the number
+  watertemp: Number, // add Farenheit to the number
+  brewtime: Number, // convert to a time value
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
   timestamps: true
