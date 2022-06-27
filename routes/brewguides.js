@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { app } from '../server'
+import * as brewGuidesCtrl from '../controllers/brewguides.js'
 
 const router = Router()
 
 // GET localhost:3000/brewguides
-router.get('/', )
+router.get('/', brewGuidesCtrl.index)
 
 export {
   router
