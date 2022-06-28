@@ -3,7 +3,26 @@
 
 <section>
   <h1>Brewguide created by <%= brewguide.owner.name %></h1>
-  <h3><%= brewguide.name %></h3>
+  
+
+  <!-- --------------------------------- -->
+
+  <section>
+    <h3><%= brewguide.name %></h3>
+    <div>Brew Device: </div>
+    <div><%= brewguide.brewdevice %></div>
+    <div>Grind Size: </div>
+    <div><%= brewguide.grindsize %></div>
+    <div>Grams of Coffee: </div>
+    <div><%= brewguide.gramsofcoffee %></div>
+    <div>Water Temp: </div>
+    <div><%= brewguide.watertemp %></div>
+    <div>Brew Time: </div>
+    <div><%= brewguide.brewtime %></div>
+  </section>
+
+  <!-- --------------------------------- -->
+
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
       <button class="btn" type="submit">Edit this brewguide</button>
