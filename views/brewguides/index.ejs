@@ -33,9 +33,9 @@
 
     <!-- Ground Coffee -->
     <label>
-      Ground Coffee:
+      Grams of Coffee:
       <!-- might wanna change this to a text input with a syntax suggestion -->
-      <input type="number" name="groundcoffee" autocomplete="off">
+      <input type="number" name="gramsofcoffee" autocomplete="off">
     </label>
 
     <!-- Water Temp -->
@@ -52,12 +52,16 @@
       <input type="number" name="brewtime" autocomplete="off">
     </label>
 
+    <button type="submit">Add</button>
+
    </form>
   <% } %>
 	<ul>
   <!-- I am getting brewguides from the res.render of the index function in the brewguides controller -->
   <% brewguides.forEach(brewguide => { %>
-    <li><%= brewguide.name %></li>
+    <li>
+      <a href="/brewguides/<%= brewguide._id %>"><%= brewguide.name %></a>
+    </li>
   <% }) %>
   </ul>
 </section>
