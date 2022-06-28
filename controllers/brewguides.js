@@ -55,9 +55,28 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  BrewGuide.findById(req.params.id)
+  .then(brewguide => {
+    if (brewguide.owner.equals(req.user.profile._id)) {
+      brewguide.updateOne(req.body, {new: true})
+      .then(updatedBrewguide => {
+        res.redirect(`/brewguides/${brewguide._id}`)
+      })
+    } else {
+      throw new Error ('User Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/brewguides')
+  })
+}
+
 export {
   index,
   create,
   show,
-  edit
+  edit,
+  update
 }

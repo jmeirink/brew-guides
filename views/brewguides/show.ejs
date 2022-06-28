@@ -6,7 +6,7 @@
   <h3><%= brewguide.name %></h3>
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit this brewcard</button>
+      <button class="btn" type="submit">Edit this brewguide</button>
     </form>
   <% } %>
 </section>
