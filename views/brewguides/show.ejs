@@ -2,8 +2,13 @@
 <%- include('../partials/nav') %>
 
 <section></section>
-  <h1><%= brewguide.name %></h1>
-  <h3>From the cafe of <%= brewguide.owner.name %></h3>
+  <h1>Brewguide created by <%= brewguide.owner.name %></h1>
+  <h3><%= brewguide.name %></h3>
+  <% if (brewguide.owner.equals(user?.profile._id)) { %>
+    <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
+      <button class="btn" type="submit">Edit this brewcard</button>
+    </form>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>
