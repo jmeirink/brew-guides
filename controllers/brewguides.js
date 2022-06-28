@@ -73,10 +73,29 @@ function update(req, res) {
   })
 }
 
+function deleteBrewguide(req, res) {
+  BrewGuide.findById(req.params.id)
+  .then(brewguide => {
+    if (brewguide.owner.equals(req.user.profile._id)) {
+      brewguide.delete()
+      .then(() => {
+        res.redirect('/brewguides')
+      })
+    } else {
+      throw new Error ('User Not Authorized')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/brewguides')
+  })
+}
+
 export {
   index,
   create,
   show,
   edit,
-  update
+  update,
+  deleteBrewguide as delete
 }

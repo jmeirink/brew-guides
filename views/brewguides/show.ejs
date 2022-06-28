@@ -8,6 +8,9 @@
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
       <button class="btn" type="submit">Edit this brewguide</button>
     </form>
+    <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete brewguide</button>
+    </form>
   <% } %>
 </section>
 

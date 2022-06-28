@@ -19,6 +19,9 @@ router.post('/', isLoggedIn, brewGuidesCtrl.create)
 // PUT localhost:3000/brewguides/:id
 router.put('/:id', isLoggedIn, brewGuidesCtrl.update)
 
+// DELETE localhost:3000/brewguides/:id
+router.delete('/:id', isLoggedIn, brewGuidesCtrl.delete)
+
 export {
   router
 }
