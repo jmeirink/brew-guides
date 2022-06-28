@@ -13,7 +13,8 @@ router.get('/:id', brewGuidesCtrl.show)
 // POST localhost:3000/brewguides
 router.post('/', isLoggedIn, brewGuidesCtrl.create)
 
-// GET localhost:3000/brewguides/:id/edit???????????
+// GET localhost:3000/brewguides/:id/edit
+router.get('/:id/edit', isLoggedIn, brewGuidesCtrl.edit)
 
 
 export {

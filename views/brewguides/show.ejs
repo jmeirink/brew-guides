@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section></section>
+<section>
   <h1>Brewguide created by <%= brewguide.owner.name %></h1>
   <h3><%= brewguide.name %></h3>
   <% if (brewguide.owner.equals(user?.profile._id)) { %>

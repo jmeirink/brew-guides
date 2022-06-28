@@ -41,8 +41,23 @@ function create(req, res) {
   })
 }
 
+function edit(req, res) {
+  BrewGuide.findById(req.params.id)
+  .then(brewguide => {
+    res.render('brewguides/edit', {
+      brewguide,
+      title: 'edit brewguide'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/brewguides')
+  })
+}
+
 export {
   index,
   create,
-  show
+  show,
+  edit
 }

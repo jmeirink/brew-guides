@@ -1,0 +1,58 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit the brewguide!</h1>
+  <form action="">
+
+    <!-- Brewguide Name -->
+    <label>
+      Name:
+      <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
+    </label>
+
+    <!-- Brew Device -->
+    <label for="brewdevice-select">Brew Device:</label>
+    <select name="brewdevice" value="<%= brewguide.brewdevice %>">
+      <option value="V60">V60</option>
+      <option value="Chemex">Chemex</option>
+      <option value="Kalita">Kalita</option>
+      <option value="Aeropress">Aeropress</option>
+    </select>
+
+    <!-- Grind Size -->
+    <label for="grindsize-select">Grind Size:</label>
+    <select name="grindsize" value="<%= brewguide.grindsize %>">
+      <option value="Course">Course</option>
+      <option value="Medium">Medium</option>
+      <option value="Fine">Fine</option>
+      <option value="Extra Fine">Extra Fine</option>
+    </select>
+
+    <!-- Ground Coffee -->
+    <label>
+      Grams of Coffee:
+      <!-- might wanna change this to a text input with a syntax suggestion -->
+      <input type="number" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
+    </label>
+
+    <!-- Water Temp -->
+    <label>
+      Water Temp:
+      <!-- might wanna change this to a text input with a syntax suggestion -->
+      <input type="number" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
+    </label>
+
+    <!-- Brew Time -->
+    <label>
+      Brew Time:
+      <!-- might wanna change this to a text input with a syntax suggestion -->
+      <input type="number" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
+    </label>
+
+    <button type="submit">Edit</button>
+
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
