@@ -20,9 +20,25 @@ function newBrewGuide(req, res) {
   })
 }
 
-function review(req, res) {
-  res.render('brewguides/review', {
-    title: 'review'
+function review(req, res) { // Not working
+  BrewGuide.findById(req.params.id)
+  .populate('owner')
+  .then(brewguide => {
+    res.render('brewguides/review', {
+      brewguide,
+      title: 'review'
+    })
+  })
+}
+
+function createReview(req, res) {
+  BrewGuide.findById(req.params.id)
+  .then(brewguide => {
+    brewguide.reviews.push(req.body)
+    brewguide.save()
+    .then(() => {
+      res.redirect(`/brewguides/${brewguide._id}`)
+    })
   })
 }
 
@@ -106,7 +122,8 @@ function deleteBrewguide(req, res) {
 export {
   index,
   newBrewGuide as new,
-  review,
+  review,  // Not working
+  createReview,  // Not working
   create,
   show,
   edit,

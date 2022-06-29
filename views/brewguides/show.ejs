@@ -25,10 +25,10 @@
 
 <!-- ----------------------------------------------------- -->
 
-  <% if (user) { %> 
-    <div>
-      <a href="/brewguides/review">Add a review!</a>
-    </div>
+<% if (user) { %>  
+  <form action="/brewguides/<%= brewguide._id %>/review" method="GET">
+    <button class="btn" type="submit">Add a review</button>
+  </form>
   <% } %>
 
 <!-- ----------------------------------------------------- -->
