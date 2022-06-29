@@ -20,6 +20,12 @@ function newBrewGuide(req, res) {
   })
 }
 
+function review(req, res) {
+  res.render('brewguides/review', {
+    title: 'review'
+  })
+}
+
 function show(req, res) {
   BrewGuide.findById(req.params.id)
   .populate('owner')
@@ -100,6 +106,7 @@ function deleteBrewguide(req, res) {
 export {
   index,
   newBrewGuide as new,
+  review,
   create,
   show,
   edit,
