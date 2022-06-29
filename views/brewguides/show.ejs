@@ -3,32 +3,22 @@
 
 <section>
   <h1>Brewguide created by <%= brewguide.owner.name %></h1>
-  
-
-  <!-- --------------------------------- -->
 
   <section>
     <h3><%= brewguide.name %></h3>
-    <div>Brew Device: </div>
-    <div><%= brewguide.brewdevice %></div>
-    <div>Grind Size: </div>
-    <div><%= brewguide.grindsize %></div>
-    <div>Grams of Coffee: </div>
-    <div><%= brewguide.gramsofcoffee %></div>
-    <div>Water Temp: </div>
-    <div><%= brewguide.watertemp %></div>
-    <div>Brew Time: </div>
-    <div><%= brewguide.brewtime %></div>
+    <div>Brew Device: <%= brewguide.brewdevice %></div>
+    <div>Grind Size: <%= brewguide.grindsize %></div>
+    <div>Grams of Coffee: <%= brewguide.gramsofcoffee %></div>
+    <div>Water Temp: <%= brewguide.watertemp %></div>
+    <div>Total Brew Time: <%= brewguide.brewtime %></div>
   </section>
-
-  <!-- --------------------------------- -->
 
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit this brewguide</button>
+      <button class="btn" type="submit">Edit</button>
     </form>
     <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete brewguide</button>
+      <button class="btn" type="submit">Remove</button>
     </form>
   <% } %>
 </section>
