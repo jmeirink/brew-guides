@@ -6,51 +6,65 @@
   <form action="/brewguides/<%= brewguide._id %>?_method=PUT" method="POST">
 
     <!-- Brewguide Name -->
-    <label>
-      Name:
-      <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
-    </label>
+    <div>
+      <label>
+        Name:
+        <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
+      </label>
+    </div>
 
     <!-- Brew Device -->
-    <label for="brewdevice-select">Brew Device:</label>
-    <select name="brewdevice" value="<%= brewguide.brewdevice %>">
-      <option value="V60">V60</option>
-      <option value="Chemex">Chemex</option>
-      <option value="Kalita">Kalita</option>
-      <option value="Aeropress">Aeropress</option>
-    </select>
+    <div>
+      <label for="brewdevice-select">Brew Device:</label>
+      <select name="brewdevice" value="<%= brewguide.brewdevice %>">
+        <option value="V60">V60</option>
+        <option value="Chemex">Chemex</option>
+        <option value="Kalita">Kalita</option>
+        <option value="Aeropress">Aeropress</option>
+      </select>
+    </div>
 
     <!-- Grind Size -->
-    <label for="grindsize-select">Grind Size:</label>
-    <select name="grindsize" value="<%= brewguide.grindsize %>">
-      <option value="Course">Course</option>
-      <option value="Medium">Medium</option>
-      <option value="Fine">Fine</option>
-      <option value="Extra Fine">Extra Fine</option>
-    </select>
+    <div>
+      <label for="grindsize-select">Grind Size:</label>
+      <select name="grindsize" value="<%= brewguide.grindsize %>">
+        <option value="Course">Course</option>
+        <option value="Medium">Medium</option>
+        <option value="Fine">Fine</option>
+        <option value="Extra Fine">Extra Fine</option>
+      </select>
+    </div>
 
     <!-- Ground Coffee -->
-    <label>
-      Grams of Coffee:
-      <!-- might wanna change this to a text input with a syntax suggestion -->
-      <input type="number" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
-    </label>
+    <div>
+      <label>
+        Grams of Coffee:
+        <!-- might wanna change this to a text input with a syntax suggestion -->
+        <input type="number" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
+      </label>
+    </div>
 
     <!-- Water Temp -->
-    <label>
-      Water Temp:
-      <!-- might wanna change this to a text input with a syntax suggestion -->
-      <input type="number" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
-    </label>
+    <div>
+      <label>
+        Water Temp:
+        <!-- might wanna change this to a text input with a syntax suggestion -->
+        <input type="number" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
+      </label>
+    </div>
 
     <!-- Brew Time -->
-    <label>
-      Brew Time:
-      <!-- might wanna change this to a text input with a syntax suggestion -->
-      <input type="number" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
-    </label>
+    <div>
+      <label>
+        Brew Time:
+        <!-- might wanna change this to a text input with a syntax suggestion -->
+        <input type="number" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
+      </label>
+    </div>
 
-    <button type="submit">Edit</button>
+    <div>
+      <button type="submit">Edit</button>
+    </div>
 
   </form>
 </section>
