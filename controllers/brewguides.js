@@ -14,6 +14,12 @@ function index(req, res) {
   })
 }
 
+function newBrewGuide(req, res) {
+  res.render('brewguides/new', {
+    title: 'new'
+  })
+}
+
 function show(req, res) {
   BrewGuide.findById(req.params.id)
   .populate('owner')
@@ -93,6 +99,7 @@ function deleteBrewguide(req, res) {
 
 export {
   index,
+  newBrewGuide as new,
   create,
   show,
   edit,

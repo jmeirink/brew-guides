@@ -3,81 +3,20 @@
 
 <section>
   <h1>Brew Guides</h1>
-  <% if (user) { %>
-   <h2>Add a Brewguide!</h2>
-   <form action="/brewguides" method="POST">
-    
-    <!-- Brewguide Name -->
-    <div>
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-    </div>
-
-    <!-- Brew Device -->
-    <div>
-      <label for="brewdevice-select">Brew Device:</label>
-      <select name="brewdevice">
-        <option value="V60">V60</option>
-        <option value="Chemex">Chemex</option>
-        <option value="Kalita">Kalita</option>
-        <option value="Aeropress">Aeropress</option>
-      </select>
-    </div>
-
-    <!-- Grind Size -->
-    <div>
-      <label for="grindsize-select">Grind Size:</label>
-      <select name="grindsize">
-        <option value="Course">Course</option>
-        <option value="Medium">Medium</option>
-        <option value="Fine">Fine</option>
-        <option value="Extra Fine">Extra Fine</option>
-      </select>
-    </div>
-
-    <!-- Ground Coffee -->
-    <div>
-      <label>
-        Grams of Coffee:
-        <!-- might wanna change this to a text input with a syntax suggestion -->
-        <input type="number" name="gramsofcoffee" autocomplete="off">
-      </label>
-    </div>
-
-    <!-- Water Temp -->
-    <div>
-      <label>
-        Water Temp:
-        <!-- might wanna change this to a text input with a syntax suggestion -->
-        <input type="number" name="watertemp" autocomplete="off">
-      </label>
-    </div>
-
-    <!-- Brew Time -->
-    <div>
-      <label>
-        Brew Time:
-        <!-- might wanna change this to a text input with a syntax suggestion -->
-        <input type="number" name="brewtime" autocomplete="off">
-      </label>
-    </div>
-
-    <div>
-      <button type="submit">Add</button>
-    </div>
-
-   </form>
-  <% } %>
 	<ul>
-  <!-- I am getting brewguides from the res.render of the index function in the brewguides controller -->
   <% brewguides.forEach(brewguide => { %>
     <li>
       <a href="/brewguides/<%= brewguide._id %>"><%= brewguide.name %></a>
     </li>
   <% }) %>
   </ul>
+
+  <% if (user) { %> 
+     <div>
+       <a href="/brewguides/new">Add</a>
+     </div>
+   <% } %>
+
 </section>
 
 <%- include('../partials/footer') %>
