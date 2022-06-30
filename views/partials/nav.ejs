@@ -4,6 +4,20 @@
 </head>
 <body>
   <nav>
+    
+    <!-- ------------------------------------- -->
+
+    <% if (user?.profile.avatar) { %>
+      <div>
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
+      </div>
+    <% } %>
+    
+    <!-- ------------------------------------- -->
+
     <a href="/brewguides">Brew Guides</a>
     <% if (user) { %>
       <a href="/auth/logout">

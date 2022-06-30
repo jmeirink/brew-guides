@@ -20,36 +20,11 @@ function newBrewGuide(req, res) {
   })
 }
 
-function review(req, res) {
-  BrewGuide.findById(req.params.id)
-  .populate('owner')
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  BrewGuide.create(req.body)
   .then(brewguide => {
-    res.render('brewguides/review', {
-      brewguide,
-      title: 'review'
-    })
-  })
-}
-
-function createReview(req, res) {
-  BrewGuide.findById(req.params.id)
-  .then(brewguide => {
-    brewguide.reviews.push(req.body)
-    brewguide.save()
-    .then(() => {
-      res.redirect(`/brewguides/${brewguide._id}`)
-    })
-  })
-}
-
-function deleteReview(req, res) {
-  BrewGuide.findById(req.params.id)
-  .then(brewguide => {
-    brewguide.reviews.remove({_id: req.params.reviewId})
-    brewguide.save()
-    .then(() => {
-      res.redirect(`/brewguides/${req.params.id}`)
-    })
+    res.redirect('/brewguides')
   })
   .catch(err => {
     console.log(err)
@@ -65,18 +40,6 @@ function show(req, res) {
       brewguide,
       title: 'show'
     })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/brewguides')
-  })
-}
-
-function create(req, res) {
-  req.body.owner = req.user.profile._id
-  BrewGuide.create(req.body)
-  .then(brewguide => {
-    res.redirect('/brewguides')
   })
   .catch(err => {
     console.log(err)
@@ -134,15 +97,52 @@ function deleteBrewguide(req, res) {
   })
 }
 
+function review(req, res) {
+  BrewGuide.findById(req.params.id)
+  .populate('owner')
+  .then(brewguide => {
+    res.render('brewguides/review', {
+      brewguide,
+      title: 'review'
+    })
+  })
+}
+
+function createReview(req, res) {
+  BrewGuide.findById(req.params.id)
+  .then(brewguide => {
+    brewguide.reviews.push(req.body)
+    brewguide.save()
+    .then(() => {
+      res.redirect(`/brewguides/${brewguide._id}`)
+    })
+  })
+}
+
+function deleteReview(req, res) {
+  BrewGuide.findById(req.params.id)
+  .then(brewguide => {
+    brewguide.reviews.remove({_id: req.params.reviewId})
+    brewguide.save()
+    .then(() => {
+      res.redirect(`/brewguides/${req.params.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/brewguides')
+  })
+}
+
 export {
   index,
   newBrewGuide as new,
-  review,
-  createReview,
   create,
   show,
   edit,
   update,
   deleteBrewguide as delete,
+  review,
+  createReview,
   deleteReview
 }
