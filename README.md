@@ -6,12 +6,9 @@ Welcome to Brew Guides! This app was created for coffee enthusiasts to have a pl
 - **Check out the app!** **https://brew-guides-jmeirink.herokuapp.com**
 - **Trello Planning:** **https://trello.com/b/0K6CGW1x/brew-guides**
 
+## Screenshot
 
-**Screenshot(s):**
-## Screenshots
-
-![App Screenshot](![468x300] (https://user-images.githubusercontent.com/84925553/176710702-60542678-0dd8-4ea3-882c-06466ea148b7.png)
-)
+<img width="300" alt="Portfolio Image" src="https://user-images.githubusercontent.com/84925553/176710702-60542678-0dd8-4ea3-882c-06466ea148b7.png">
 
 **Technologies Used**: HTML, CSS, JavaScript, MongoDB, Google OAuth, EJS, Node, Express, GIT
 
