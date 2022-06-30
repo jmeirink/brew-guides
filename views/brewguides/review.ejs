@@ -3,23 +3,28 @@
 
 <h1>Brew Guides</h1>
 
-<h2>Reviews</h2>
+<h2>Add a comment below</h2>
   <form 
     id="add-review-form"
     action="/brewguides/<%= brewguide._id %>/reviews"
     method="POST"
   >
-    <label for="content-textarea">Review:</label>
-    <textarea name="content" id="content-textarea"></textarea>
-    <label for="rating-select">Rating:</label>
-    <select name="rating" id="rating-select">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5" selected>5</option>
-    </select>
-    <button type="submit">Add Review</button>
+    
+    <div>
+      <!-- <label for="content-textarea">Comment:</label> -->
+      <textarea name="content" id="content-textarea"></textarea>
+    </div>
+    <div>
+      <label for="rating-select">Rating:</label>
+      <select name="rating" id="rating-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-secondary">Add</button>
   </form>
 
 <%- include('../partials/footer') %>

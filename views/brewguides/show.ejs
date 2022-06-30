@@ -16,10 +16,10 @@
 
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
-      <button class="btn" type="submit">Edit</button>
+      <button type="submit" class="btn btn-secondary">Edit</button>
     </form>
     <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Remove</button>
+      <button type="submit" class="btn btn-secondary">Remove</button>
     </form>
   <% } %>
 </section>
@@ -28,8 +28,8 @@
   <table>
     <thead>
       <tr>
-        <th>Reviews</th>
-        <th>Rating</th>
+        <th>Comments</th>
+        <th>Ratings</th>
       </tr>
     </thead>
     <tbody>
@@ -40,7 +40,7 @@
           <td>
           <% if (brewguide.owner.equals(user?.profile._id)) { %>
             <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button class="btn" type="">Delete Comment</button>
+              <button type="" class="btn btn-secondary">Delete Comment</button>
             </form>
           <% } %>
           </td>
@@ -53,13 +53,13 @@
 
 
 <% } else { %>
-  <h3>No Reviews Yet</h3>
+  <h3>No Comments Yet</h3>
 <% } %>
 
 
 <% if (user) { %>  
   <form action="/brewguides/<%= brewguide._id %>/review" method="GET">
-    <button class="btn" type="submit">Add a review</button>
+    <button type="submit" class="btn btn-secondary">Add a comment</button>
   </form>
   <% } %>
 

@@ -5,21 +5,18 @@
   <h1>Brew Guides</h1>
 
   <h3>Select a brew guide below</h3>
-	<ul>
   <% brewguides.forEach(brewguide => { %>
-    <div class="text-">
+    <div>
       <a href="/brewguides/<%= brewguide._id %>"><%= brewguide.name %></a>
     </div>
-
   <% }) %>
-  </ul>
+  
 
   <% if (user) { %> 
      <div>
-       <a href="/brewguides/new">Add</a>
+       <a href="/brewguides/new"><button type="button" class="btn btn-secondary">Add a Brew Guide</button></a>
      </div>
    <% } %>
-
 </section>
 
 <%- include('../partials/footer') %>
