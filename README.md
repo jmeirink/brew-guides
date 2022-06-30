@@ -3,8 +3,8 @@
 Welcome to Brew Guides! This app was created for coffee enthusiasts to have a place to share all of their brew recipes in one place. Whether you are a seasoned coffee enthusiast or just starting out, I hope this is a great resource in your journey to brewing that perfect cup of coffee!
 
 **Getting Started**: 
-- **Check out the app!** **https://brew-guides-jmeirink.herokuapp.com**
-- **Trello Planning:** **https://trello.com/b/0K6CGW1x/brew-guides**
+- **Check out the app!** https://brew-guides-jmeirink.herokuapp.com
+- **Trello Planning:** https://trello.com/b/0K6CGW1x/brew-guides
 
 ## Screenshot
 
