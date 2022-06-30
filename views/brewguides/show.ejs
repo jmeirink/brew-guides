@@ -23,14 +23,43 @@
   <% } %>
 </section>
 
-<!-- ----------------------------------------------------- -->
+<% if (brewguide.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% brewguide.reviews.forEach(function(review) { %>
+        <tr>
+          <td><%= review.content %></td>
+          <td><%= review.rating %></td>
+          <td>
+          <% if (brewguide.owner.equals(user?.profile._id)) { %>
+            <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+              <button class="btn" type="">Delete Comment</button>
+            </form>
+          <% } %>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+
+
+
+<% } else { %>
+  <h3>No Reviews Yet</h3>
+<% } %>
+
 
 <% if (user) { %>  
   <form action="/brewguides/<%= brewguide._id %>/review" method="GET">
     <button class="btn" type="submit">Add a review</button>
   </form>
   <% } %>
-
-<!-- ----------------------------------------------------- -->
 
 <%- include('../partials/footer') %>
