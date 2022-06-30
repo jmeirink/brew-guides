@@ -3,11 +3,14 @@
 
 <section>
   <h1>Brew Guides</h1>
+
+  <h3>Select a brew guide below</h3>
 	<ul>
   <% brewguides.forEach(brewguide => { %>
-    <li>
+    <div class="text-">
       <a href="/brewguides/<%= brewguide._id %>"><%= brewguide.name %></a>
-    </li>
+    </div>
+
   <% }) %>
   </ul>
 

@@ -13,11 +13,11 @@ const brewGuideSchema = new Schema({
   name: String,
   brewdevice: {
     type: String,
-    enum: ['V60', 'Chemex', 'Kalita', 'Aeropress']
+    enum: ['V60', 'Chemex', 'Kalita', 'French Press', 'Aeropress', 'MokaPot']
   },
   grindsize: {
     type: String,
-    enum: ['Course', 'Medium', 'Fine', 'Extra Fine']
+    enum: ['Course', 'Medium Course', 'Medium', 'Fine', 'Extra Fine']
   },
   gramsofcoffee: Number, // add Grams to the number and change the name back to groundcoffee
   watertemp: Number, // add Farenheit to the number
