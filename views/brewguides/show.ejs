@@ -35,10 +35,12 @@
   <div class="container w-50">
     <div class="row justify-content-center">
       <div class="col w-30"> 
-        <br>
-        <h3>Reviews</h3>
-
+        
         <hr>
+
+        <h3>Reviews</h3>
+        
+        <br>
 
         <% brewguide.reviews.forEach(function(review) { %>
           <h6><strong><%= brewguide.owner.name %> - </strong><%= review.content %></h6>
