@@ -19,9 +19,9 @@ const brewGuideSchema = new Schema({
     type: String,
     enum: ['Course', 'Medium Course', 'Medium', 'Fine', 'Extra Fine']
   },
-  gramsofcoffee: Number, // add Grams to the number and change the name back to groundcoffee
-  watertemp: Number, // add Farenheit to the number
-  brewtime: Number, // convert to a time value,
+  gramsofcoffee: String,
+  watertemp: String,
+  brewtime: String,
   reviews: [reviewSchema],
   owner: {type: Schema.Types.ObjectId, ref: "Profile"}
 }, {
