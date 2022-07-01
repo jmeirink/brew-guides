@@ -20,6 +20,7 @@ const brewGuideSchema = new Schema({
     enum: ['Course', 'Medium Course', 'Medium', 'Fine', 'Extra Fine']
   },
   gramsofcoffee: String,
+  totalwater: String, //ADDED
   watertemp: String,
   brewtime: String,
   reviews: [reviewSchema],

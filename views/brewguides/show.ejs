@@ -2,15 +2,14 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <!-- <h1>Brewguide created by <%= brewguide.owner.name %></h1> -->
   <h1>Brew Guides</h1>
-  
   <section>
     <h3><%= brewguide.name %></h3>
     <br>
     <div class="text"><strong>Brew Device: </strong><%= brewguide.brewdevice %></div>
     <div class="text"><strong>Grind Size: </strong><%= brewguide.grindsize %></div>
     <div class="text"><strong>Ground Coffee: </strong><%= brewguide.gramsofcoffee %></div>
+    <div class="text"><strong>Total Water: </strong><%= brewguide.totalwater %></div>
     <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
     <div class="text"><strong>Brew Time: </strong><%= brewguide.brewtime %></div>
   </section>
@@ -31,16 +30,12 @@
 </section>
 
 <br>
-<!-- ------------------------- -->
 
 <% if (brewguide.reviews.length) { %>
   <div class="container w-50">
-    <div class="row justify-content-center"> <!-- Row, add border here -->
-      <div class="col w-30"> <!-- Column , add border here-->
-        
+    <div class="row justify-content-center">
+      <div class="col w-30"> 
         <br>
-        
-
         <h3>Reviews</h3>
 
         <hr>
@@ -48,13 +43,11 @@
         <% brewguide.reviews.forEach(function(review) { %>
           <h6><strong><%= brewguide.owner.name %> - </strong><%= review.content %></h6>
           <h6><%= review.rating %> Stars</h6>
-
-          
-
           <% if (brewguide.owner.equals(user?.profile._id)) { %>
             <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
               <button type="" class="btn btn-secondary">Delete Review</button>
             </form>
+
             <hr>
             
           <% } %>
