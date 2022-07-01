@@ -3,19 +3,14 @@
 
 <section>
   <h1>Brew Guides</h1>
-
-  <h3>Select a brew guide below</h3>
-  
+  <h3>Select a brew guide below</h3> 
   <br>
-
   <% brewguides.forEach(brewguide => { %>
     <div>
       <a href="/brewguides/<%= brewguide._id %>" class="link link-dark"><%= brewguide.name %></a>
     </div>
   <% }) %>
-  
   <br>
-
   <% if (user) { %> 
      <div>
        <a href="/brewguides/new"><button type="button" class="btn btn-secondary">Add a Brew Guide</button></a>

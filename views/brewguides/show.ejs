@@ -13,35 +13,25 @@
     <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
     <div class="text"><strong>Brew Time: </strong><%= brewguide.brewtime %></div>
   </section>
-
   <br>
-
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
       <button type="submit" class="btn btn-secondary">Edit</button>
     </form>
-
     <br>
-
     <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
       <button type="submit" class="btn btn-secondary">Remove</button>
     </form>
   <% } %>
 </section>
-
 <br>
-
 <% if (brewguide.reviews.length) { %>
   <div class="container w-50">
     <div class="row justify-content-center">
       <div class="col w-30"> 
-        
         <hr>
-
         <h3>Reviews</h3>
-        
         <br>
-
         <% brewguide.reviews.forEach(function(review) { %>
           <h6><strong><%= brewguide.owner.name %> - </strong><%= review.content %></h6>
           <h6><%= review.rating %> Stars</h6>
@@ -49,20 +39,16 @@
             <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
               <button type="" class="btn btn-secondary">Delete Review</button>
             </form>
-
             <hr>
-            
           <% } %>
         <% }) %>
   <% } else { %>
       <h3>No Reviews Yet</h3>
-    </div>  
+    </div>
   </div>
 </div>
 <% } %>
-
 <br>
-
 <% if (user) { %>  
   <form action="/brewguides/<%= brewguide._id %>/review" method="GET">
     <button type="submit" class="btn btn-secondary">Add a review</button>

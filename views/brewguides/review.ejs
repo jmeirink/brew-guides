@@ -2,25 +2,19 @@
 <%- include('../partials/nav') %>
 
 <h1>Brew Guides</h1>
-
 <h2>Add a review below</h2>
-
   <br>
-
   <form 
     id="add-review-form"
     action="/brewguides/<%= brewguide._id %>/reviews"
     method="POST"
   >
-    
     <div>
       <!-- <label for="content-textarea">Comment:</label> -->
       <textarea name="content" id="content-textarea"></textarea>
     </div>
     <div>
-
       <br>
-
       <label for="rating-select">Rating:</label>
       <select name="rating" id="rating-select">
         <option value="1">1</option>
@@ -30,9 +24,7 @@
         <option value="5" selected>5</option>
       </select>
     </div>
-
     <br>
-
     <button type="submit" class="btn btn-secondary">Add</button>
   </form>
 
