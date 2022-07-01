@@ -5,7 +5,7 @@ function index(req, res) {
   .then(brewguides => {
     res.render('brewguides/index', {
       brewguides,
-      title: 'Brewguide'
+      title: 'Brew Guides'
     })
   })
   .catch(err => {
@@ -16,7 +16,7 @@ function index(req, res) {
 
 function newBrewGuide(req, res) {
   res.render('brewguides/new', {
-    title: 'new'
+    title: 'Add a Brew Guide'
   })
 }
 
@@ -38,7 +38,7 @@ function show(req, res) {
   .then(brewguide => {
     res.render('brewguides/show', {
       brewguide,
-      title: 'show'
+      title: brewguide.name
     })
   })
   .catch(err => {
@@ -52,7 +52,7 @@ function edit(req, res) {
   .then(brewguide => {
     res.render('brewguides/edit', {
       brewguide,
-      title: 'edit brewguide'
+      title: 'Edit Brew Guide'
     })
   })
   .catch(err => {
@@ -103,7 +103,7 @@ function review(req, res) {
   .then(brewguide => {
     res.render('brewguides/review', {
       brewguide,
-      title: 'review'
+      title: 'Add a Review'
     })
   })
 }
