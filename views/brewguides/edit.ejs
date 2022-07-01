@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Brew Guides</h1>
+  <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
 
   <h3>Edit this brew guide</h3>
   <form action="/brewguides/<%= brewguide._id %>?_method=PUT" method="POST">
