@@ -7,59 +7,67 @@
   
   <section>
     <h3><%= brewguide.name %></h3>
-    <div>Brew Device: <%= brewguide.brewdevice %></div>
-    <div>Grind Size: <%= brewguide.grindsize %></div>
-    <div>Grams of Coffee: <%= brewguide.gramsofcoffee %></div>
-    <div>Water Temp: <%= brewguide.watertemp %></div>
-    <div>Total Brew Time: <%= brewguide.brewtime %></div>
+    <br>
+    <div class="text"><strong>Brew Device: </strong><%= brewguide.brewdevice %></div>
+    <div class="text"><strong>Grind Size: </strong><%= brewguide.grindsize %></div>
+    <div class="text"><strong>Grams of Coffee: </strong><%= brewguide.gramsofcoffee %></div>
+    <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
+    <div class="text"><strong>Total Brew Time: </strong><%= brewguide.brewtime %></div>
   </section>
+
+  <br>
 
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
       <button type="submit" class="btn btn-secondary">Edit</button>
     </form>
+
+    <br>
+
     <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
       <button type="submit" class="btn btn-secondary">Remove</button>
     </form>
   <% } %>
 </section>
 
+<br>
+<!-- ------------------------- -->
+
 <% if (brewguide.reviews.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Comments</th>
-        <th>Ratings</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% brewguide.reviews.forEach(function(review) { %>
-        <tr>
-          <td><%= review.content %></td>
-          <td><%= review.rating %></td>
-          <td>
+  <div class="container w-50">
+    <div class="row justify-content-center"> <!-- Row, add border here -->
+      <div class="col w-30"> <!-- Column , add border here-->
+        
+        <br>
+        <hr>
+
+        <h3>Reviews</h3>
+
+        <% brewguide.reviews.forEach(function(review) { %>
+          <h6><%= brewguide.owner.name %> - <%= review.content %></h6>
+          <h6><%= review.rating %> Stars</h6>
+
+          <hr>
+
           <% if (brewguide.owner.equals(user?.profile._id)) { %>
             <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button type="" class="btn btn-secondary">Delete Comment</button>
+              <button type="" class="btn btn-secondary">Delete Review</button>
             </form>
+            <br>
           <% } %>
-          </td>
-        </tr>
-      <% }) %>
-    </tbody>
-  </table>
-
-
-
-
-<% } else { %>
-  <h3>No Comments Yet</h3>
+        <% }) %>
+  <% } else { %>
+      <h3>No Reviews Yet</h3>
+    </div>  
+  </div>
+</div>
 <% } %>
 
+<br>
 
 <% if (user) { %>  
   <form action="/brewguides/<%= brewguide._id %>/review" method="GET">
-    <button type="submit" class="btn btn-secondary">Add a comment</button>
+    <button type="submit" class="btn btn-secondary">Add a review</button>
   </form>
   <% } %>
 
