@@ -7,10 +7,10 @@ Welcome to Brew Guides! This app was created for coffee enthusiasts to have a pl
 - **Trello Planning:** https://trello.com/b/0K6CGW1x/brew-guides
 
 ## Screenshot
+<img width="300" alt="BrewGuides Home" src="https://user-images.githubusercontent.com/84925553/176827099-c5f58e78-28a2-4f59-8f1b-bf589de2dc6e.png">
 
-<img width="300" alt="Portfolio Image" src="https://user-images.githubusercontent.com/84925553/176710702-60542678-0dd8-4ea3-882c-06466ea148b7.png">
 
-**Technologies Used**: HTML, CSS, JavaScript, MongoDB, Google OAuth, EJS, Node, Express, GIT
+**Technologies Used**: HTML, CSS, JavaScript, MongoDB, Google OAuth, Bootstrap, EJS, Node, Express, Git
 
 **Next Steps**: The future of Brew Guides is bright! With additional features such as Brew Guide instructions, and a built in timer to monitor your brew time.
 
