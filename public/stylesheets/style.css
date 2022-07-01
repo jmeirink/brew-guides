@@ -16,18 +16,21 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  background-color: whitesmoke;
-  /* Use a system font, if none are available use an available sans-sarif font */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-  margin: 0;
-  text-align: center;
+#navbar {
+  background-color: #0000003b;
+  font-size: 1.6rem;
 }
 
-#navbar {
-  background-color: #807f7f56;
-  font-size: 1.6rem;
+body {
+  /* background-color: #00000010; */
+  /* background-image: url("/public/images/backgrounds/pexels-maria-orlova-4940775.jpg"); */
+  
+  /* Use a system font, if none are available use an available sans-sarif font */
+  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  text-align: center;
 }
 
 main {
@@ -64,5 +67,5 @@ label, select {
 
 .link {
   font-size: 15px;
+  /* text-decoration: none; */
 }
-
