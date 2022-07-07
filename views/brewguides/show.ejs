@@ -33,7 +33,7 @@
         <h3>Reviews</h3>
         <br>
         <% brewguide.reviews.forEach(function(review) { %>
-          <h6><strong><%= brewguide.owner.name %> - </strong><%= review.content %></h6>
+          <h6><strong><%= review.author.name %> - </strong><%= review.content %></h6>
           <h6><%= review.rating %> Stars</h6>
           <% if (brewguide.owner.equals(user?.profile._id)) { %>
             <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">

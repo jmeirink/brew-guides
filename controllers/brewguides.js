@@ -35,6 +35,7 @@ function create(req, res) {
 function show(req, res) {
   BrewGuide.findById(req.params.id)
   .populate('owner')
+  .populate('reviews.author')
   .then(brewguide => {
     res.render('brewguides/show', {
       brewguide,
@@ -109,6 +110,7 @@ function review(req, res) {
 }
 
 function createReview(req, res) {
+  req.body.author = req.user.profile._id
   BrewGuide.findById(req.params.id)
   .then(brewguide => {
     brewguide.reviews.push(req.body)
