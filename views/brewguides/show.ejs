@@ -1,9 +1,9 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
+<div>
   <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
-  <section>
+  <div>
     <h3><%= brewguide.name %></h3>
     <p>By <%= brewguide.owner.name %></p>
     <div class="text"><strong>Brew Device: </strong><%= brewguide.brewdevice %></div>
@@ -12,7 +12,7 @@
     <div class="text"><strong>Total Water: </strong><%= brewguide.totalwater %></div>
     <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
     <div class="text"><strong>Brew Time: </strong><%= brewguide.brewtime %></div>
-  </section>
+  </div>
   <br>
   <% if (brewguide.owner.equals(user?.profile._id)) { %>
     <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
@@ -23,7 +23,7 @@
       <button type="submit" class="btn btn-secondary">Remove</button>
     </form>
   <% } %>
-</section>
+  </div>
 <br>
 <% if (brewguide.reviews.length) { %>
   <div class="container w-50">

@@ -124,11 +124,13 @@ function createReview(req, res) {
 function deleteReview(req, res) {
   BrewGuide.findById(req.params.id)
   .then(brewguide => {
-    brewguide.reviews.remove({_id: req.params.reviewId})
-    brewguide.save()
-    .then(() => {
-      res.redirect(`/brewguides/${req.params.id}`)
-    })
+    if (req.brewguide.reviews.author.equals(req.brewguide.reviews.author)) {
+      brewguide.reviews.remove({_id: req.params.reviewId})
+      brewguide.save()
+      .then(() => {
+        res.redirect(`/brewguides/${req.params.id}`)
+      })
+    }
   })
   .catch(err => {
     console.log(err)
