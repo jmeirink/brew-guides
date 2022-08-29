@@ -1,58 +1,60 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<div>
-  <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
+<div class="window">
   <div>
-    <h3><%= brewguide.name %></h3>
-    <p>By <%= brewguide.owner.name %></p>
-    <div class="text"><strong>Brew Device: </strong><%= brewguide.brewdevice %></div>
-    <div class="text"><strong>Grind Size: </strong><%= brewguide.grindsize %></div>
-    <div class="text"><strong>Ground Coffee: </strong><%= brewguide.gramsofcoffee %></div>
-    <div class="text"><strong>Total Water: </strong><%= brewguide.totalwater %></div>
-    <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
-    <div class="text"><strong>Brew Time: </strong><%= brewguide.brewtime %></div>
+    <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
+    <div class="content">
+      <h3><%= brewguide.name %></h3>
+      <p>By <%= brewguide.owner.name %></p>
+      <div class="text"><strong>Brew Device: </strong><%= brewguide.brewdevice %></div>
+      <div class="text"><strong>Grind Size: </strong><%= brewguide.grindsize %></div>
+      <div class="text"><strong>Ground Coffee: </strong><%= brewguide.gramsofcoffee %></div>
+      <div class="text"><strong>Total Water: </strong><%= brewguide.totalwater %></div>
+      <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
+      <div class="text"><strong>Brew Time: </strong><%= brewguide.brewtime %></div>
+    </div>
+    <br>
+    <% if (brewguide.owner.equals(user?.profile._id)) { %>
+      <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
+        <button type="submit" class="btn btn-secondary">Edit</button>
+      </form>
+      <br>
+      <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-secondary">Remove</button>
+      </form>
+    <% } %>
   </div>
   <br>
-  <% if (brewguide.owner.equals(user?.profile._id)) { %>
-    <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
-      <button type="submit" class="btn btn-secondary">Edit</button>
-    </form>
-    <br>
-    <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
-      <button type="submit" class="btn btn-secondary">Remove</button>
-    </form>
-  <% } %>
-  </div>
-<br>
-<% if (brewguide.reviews.length) { %>
-  <div class="container w-50">
-    <div class="row justify-content-center">
-      <div class="col w-30"> 
-        <hr>
-        <h3>Reviews</h3>
-        <br>
-        <% brewguide.reviews.forEach(function(review) { %>
-          <h6><strong><%= review.author.name %> - </strong><%= review.content %></h6>
-          <h6><%= review.rating %> Stars</h6>
-          <% if (brewguide.owner.equals(user?.profile._id)) { %>
-            <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-              <button type="" class="btn btn-secondary">Delete Review</button>
-            </form>
-            <hr>
-          <% } %>
-        <% }) %>
-  <% } else { %>
-      <h3>No Reviews Yet</h3>
+  <% if (brewguide.reviews.length) { %>
+    <div class="container w-50">
+      <div class="row justify-content-center">
+        <div class="col w-30"> 
+          <hr>
+          <h3>Reviews</h3>
+          <br>
+          <% brewguide.reviews.forEach(function(review) { %>
+            <h6><strong><%= review.author.name %> - </strong><%= review.content %></h6>
+            <h6><%= review.rating %> Stars</h6>
+            <% if (brewguide.owner.equals(user?.profile._id)) { %>
+              <form action="/brewguides/<%= brewguide._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                <button type="" class="btn btn-secondary">Delete Review</button>
+              </form>
+              <hr>
+            <% } %>
+          <% }) %>
+    <% } else { %>
+        <h3>No Reviews Yet</h3>
+      </div>
     </div>
   </div>
-</div>
-<% } %>
-<br>
-<% if (user) { %>  
-  <form action="/brewguides/<%= brewguide._id %>/review" method="GET">
-    <button type="submit" class="btn btn-secondary">Add a review</button>
-  </form>
   <% } %>
+  <br>
+  <% if (user) { %>  
+    <form action="/brewguides/<%= brewguide._id %>/review" method="GET" class="window">
+      <button type="submit" class="btn btn-secondary">Add a review</button>
+    </form>
+    <% } %>
+</div>
 
 <%- include('../partials/footer') %>
