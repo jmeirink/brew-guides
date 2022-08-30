@@ -3,31 +3,35 @@
 
 <div class="window">
 <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
-<h2>Add a review</h2>
+
+<div class="content">
+  <h2>Add a review</h2>
   <br>
   <form 
     id="add-review-form"
     action="/brewguides/<%= brewguide._id %>/reviews"
     method="POST"
   >
-    <div>
-      <!-- <label for="content-textarea">Comment:</label> -->
-      <textarea name="content" id="content-textarea"></textarea>
-    </div>
-    <div>
-      <br>
-      <label for="rating-select">Rating:</label>
-      <select name="rating" id="rating-select">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5" selected>5</option>
-      </select>
-    </div>
+  <div>
+    <!-- <label for="content-textarea">Comment:</label> -->
+    <textarea name="content" id="content-textarea"></textarea>
+  </div>
+  <div>
     <br>
-    <button type="submit" class="btn btn-secondary">Add</button>
+    <label for="rating-select">Rating:</label>
+    <select name="rating" id="rating-select">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5" selected>5</option>
+    </select>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-light">Add</button>
   </form>
+</div>
+
 </div>
 
 <%- include('../partials/footer') %>

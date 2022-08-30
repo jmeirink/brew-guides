@@ -13,17 +13,19 @@
       <div class="text"><strong>Total Water: </strong><%= brewguide.totalwater %></div>
       <div class="text"><strong>Water Temp: </strong><%= brewguide.watertemp %></div>
       <div class="text"><strong>Brew Time: </strong><%= brewguide.brewtime %></div>
+      <div class="edit-btn-bar">
+        <% if (brewguide.owner.equals(user?.profile._id)) { %>
+          <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
+            <button type="submit" class="btn btn-light edit-btns">Edit</button>
+          </form>
+          <br>
+          <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-light edit-btns">Remove</button>
+          </form>
+        <% } %>
+      </div>
     </div>
     <br>
-    <% if (brewguide.owner.equals(user?.profile._id)) { %>
-      <form action="/brewguides/<%= brewguide._id %>/edit" method="GET">
-        <button type="submit" class="btn btn-secondary">Edit</button>
-      </form>
-      <br>
-      <form action="/brewguides/<%= brewguide._id %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-secondary">Remove</button>
-      </form>
-    <% } %>
   </div>
   <br>
   <% if (brewguide.reviews.length) { %>

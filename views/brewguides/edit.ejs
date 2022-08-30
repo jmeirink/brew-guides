@@ -4,74 +4,76 @@
 <div class="window">
   <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
 
-  <h3>Edit this brew guide</h3>
-  <form action="/brewguides/<%= brewguide._id %>?_method=PUT" method="POST">
+  <div class="content">
+    <h3>Edit this brew guide</h3>
+    <form action="/brewguides/<%= brewguide._id %>?_method=PUT" method="POST">
 
-    <div>
-      <label>
-        Name:
-        <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
-      </label>
-    </div>
+      <div>
+        <label>
+          Name:
+          <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
+        </label>
+      </div>
 
-    <div>
-      <label for="brewdevice-select">Brew Device:</label>
-      <select name="brewdevice" value="<%= brewguide.brewdevice %>">
-        <option value="V60">V60</option>
-        <option value="Chemex">Chemex</option>
-        <option value="Kalita">Kalita</option>
-        <option value="FrenchPress">French Press</option>
-        <option value="Aeropress">Aeropress</option>
-        <option value="MokaPot">Moka Pot</option>
-      </select>
-    </div>
+      <div>
+        <label for="brewdevice-select">Brew Device:</label>
+        <select name="brewdevice" value="<%= brewguide.brewdevice %>">
+          <option value="V60">V60</option>
+          <option value="Chemex">Chemex</option>
+          <option value="Kalita">Kalita</option>
+          <option value="FrenchPress">French Press</option>
+          <option value="Aeropress">Aeropress</option>
+          <option value="MokaPot">Moka Pot</option>
+        </select>
+      </div>
 
-    <div>
-      <label for="grindsize-select">Grind Size:</label>
-      <select name="grindsize" value="<%= brewguide.grindsize %>">
-        <option value="Course">Course</option>
-        <option value="Medium Course">Medium Course</option>
-        <option value="Medium">Medium</option>
-        <option value="Fine">Fine</option>
-        <option value="Extra Fine">Extra Fine</option>
-      </select>
-    </div>
+      <div>
+        <label for="grindsize-select">Grind Size:</label>
+        <select name="grindsize" value="<%= brewguide.grindsize %>">
+          <option value="Course">Course</option>
+          <option value="Medium Course">Medium Course</option>
+          <option value="Medium">Medium</option>
+          <option value="Fine">Fine</option>
+          <option value="Extra Fine">Extra Fine</option>
+        </select>
+      </div>
 
-    <div>
-      <label>
-        Ground Coffee:
-        <input type="text" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
-      </label>
-    </div>
+      <div>
+        <label>
+          Ground Coffee:
+          <input type="text" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
+        </label>
+      </div>
 
-    <div>
-      <label>
-        Total Water:
-        <input type="text" name="totalwater" value="<%= brewguide.totalwater %>" autocomplete="off">
-      </label>
-    </div>
+      <div>
+        <label>
+          Total Water:
+          <input type="text" name="totalwater" value="<%= brewguide.totalwater %>" autocomplete="off">
+        </label>
+      </div>
 
-    <div>
-      <label>
-        Water Temp:
-        <input type="text" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
-      </label>
-    </div>
+      <div>
+        <label>
+          Water Temp:
+          <input type="text" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
+        </label>
+      </div>
 
-    <div>
-      <label>
-        Brew Time:
-        <input type="text" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
-      </label>
-    </div>
+      <div>
+        <label>
+          Brew Time:
+          <input type="text" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
+        </label>
+      </div>
 
-    <br>
+      <br>
 
-    <div>
-      <button type="submit" class="btn btn-secondary">Edit</button>
-    </div>
+      <div>
+        <button type="submit" class="btn btn-light">Edit</button>
+      </div>
 
-  </form>
+    </form>
+  </div>
 </div>
 
 <%- include('../partials/footer') %>
