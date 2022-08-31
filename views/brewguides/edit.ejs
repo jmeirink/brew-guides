@@ -3,19 +3,14 @@
 
 <div class="window">
   <a class="nav-link active" href="/brewguides"><h1>Brew Guides</h1></a>
+  <div class="form">
 
-  <div class="content">
     <h3>Edit this brew guide</h3>
+
     <form action="/brewguides/<%= brewguide._id %>?_method=PUT" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
 
-      <div>
-        <label>
-          Name:
-          <input type="text" name="name" value="<%= brewguide.name %>" autocomplete="off">
-        </label>
-      </div>
-
-      <div>
         <label for="brewdevice-select">Brew Device:</label>
         <select name="brewdevice" value="<%= brewguide.brewdevice %>">
           <option value="V60">V60</option>
@@ -25,9 +20,7 @@
           <option value="Aeropress">Aeropress</option>
           <option value="MokaPot">Moka Pot</option>
         </select>
-      </div>
 
-      <div>
         <label for="grindsize-select">Grind Size:</label>
         <select name="grindsize" value="<%= brewguide.grindsize %>">
           <option value="Course">Course</option>
@@ -36,41 +29,22 @@
           <option value="Fine">Fine</option>
           <option value="Extra Fine">Extra Fine</option>
         </select>
-      </div>
 
-      <div>
-        <label>
-          Ground Coffee:
-          <input type="text" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
-        </label>
-      </div>
+        <label>Ground Coffee:</label>
+        <input type="text" name="gramsofcoffee" value="<%= brewguide.gramsofcoffee %>" autocomplete="off">
 
-      <div>
-        <label>
-          Total Water:
-          <input type="text" name="totalwater" value="<%= brewguide.totalwater %>" autocomplete="off">
-        </label>
-      </div>
+        <label>Total Water:</label>
+        <input type="text" name="totalwater" value="<%= brewguide.totalwater %>" autocomplete="off">
 
-      <div>
-        <label>
-          Water Temp:
-          <input type="text" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
-        </label>
-      </div>
+        <label>Water Temp:</label>
+        <input type="text" name="watertemp" value="<%= brewguide.watertemp %>" autocomplete="off">
 
-      <div>
-        <label>
-          Brew Time:
-          <input type="text" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
-        </label>
-      </div>
+        <label>Brew Time:</label>
+        <input type="text" name="brewtime" value="<%= brewguide.brewtime %>" autocomplete="off">
 
-      <br>
-
-      <div>
-        <button type="submit" class="btn btn-light">Edit</button>
-      </div>
+        <center>
+          <button type="submit" class="btn btn-light">Edit</button>
+        </center>
 
     </form>
   </div>

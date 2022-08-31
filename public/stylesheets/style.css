@@ -65,25 +65,14 @@ header {
   color: #0088a9;
 }
 
-/* ----------------------------------- */
-
 body {
   min-height: 100vh;
   font-family: 'Montserrat', sans-serif;
-
-  background-image: url("../images/bg-2.jpg");
-  background-size: cover;
-  /* background-repeat: no-repeat; */
-  background-position: center;
-
-  /* background-image: url("https://hartfordbaking.com/wp-content/uploads/2018/12/jannis-brandt-316459-unsplash.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
-
   margin: 0;
-  /* text-align: center; */
-  
+
+  background-image: url("../images/bg-img.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .window {
@@ -96,9 +85,13 @@ body {
 .content {
   width: 320px;
   border-radius: 10px;
-  padding: 30px 10px;
-  color: #fff;
+  padding: 30px 0px;
+  color: #edf0f1;
   background-color: rgba(0,0,0,.7);
+}
+
+.add-btn {
+  margin-top: 10px;
 }
 
 .edit-btn-bar {
@@ -113,7 +106,7 @@ body {
 h1 {
   font-size: 3.6rem;
   margin: 50px 0 30px;
-  color: #fff;
+  color: #edf0f1;
 }
 
 h2 {
@@ -122,7 +115,7 @@ h2 {
 
 h3 {
   font-size: 2.4rem;
-  color: #fff ;
+  color: #edf0f1;
 }
 
 h6 {
@@ -131,6 +124,10 @@ h6 {
 
 p {
   font-size: 1.3rem;
+}
+
+.content p {
+  margin-top: 10px;
 }
 
 label, select {
@@ -144,7 +141,30 @@ label, select {
 .content-links a:link,
 .content-links a:visited {
   font-size: 18px;
-  color: #fff;
+  color: #edf0f1;
   text-decoration: none;
 }
 
+div.form {
+  width: 320px;
+  border-radius: 10px;
+  padding: 30px 10px;
+  color: #edf0f1;
+  background-color: rgba(0,0,0,.7);
+  text-align: left;
+}
+
+div.form label {
+  width: 140px;
+  display: inline-block;
+  margin: 5px;
+}
+
+div.form button {
+  margin-top: 25px;
+}
+
+div.form h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
