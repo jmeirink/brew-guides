@@ -4,29 +4,25 @@
 </head>
 <body>
 
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <% if (user?.profile.avatar) { %>
-      <ul class="navbar-nav">
-        <li><img height="25px" src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar"/></li>
-      </ul>
-    <% } %>
-    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/brewguides">Brew Guides</a>
+<header>
+  <p class="logo"><a href="/brewguides">Brew Guides</a></p>
+  <nav>
+    <ul class="nav_links">
+      <% if (user?.profile.avatar) { %>
+        <li>
+          <img height="25px" src="<%= user.profile.avatar %>" alt="<%= user.profile.name %> avatar">
         </li>
-        <li class="nav-item">
-          <% if (user) { %>
-            <a class="nav-link" href="/auth/logout">Logout</a>
-          <% } else { %>
-            <a class="nav-link" href="/auth/google">Login</a>
-          <% } %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <% } %>
+      <li>
+        <% if (user) { %>
+          <a href="/auth/logout">Logout</a>
+        <% } else { %>
+          <a href="/auth/google">Login</a>
+        <% } %>
+      </li>
+      
+        
+        
+    </ul>
+  </nav>
+</header>
